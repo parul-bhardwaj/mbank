@@ -1,4 +1,4 @@
-package response;
+package mbank.response;
 
 public class BankResponse {
     String name;

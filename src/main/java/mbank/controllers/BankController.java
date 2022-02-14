@@ -1,14 +1,15 @@
-package controllers;
+package mbank.controllers;
 
-import annotation.Roles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import response.BankResponse;
-import validator.RoleParser;
+import mbank.response.BankResponse;
+import mbank.validator.RoleParser;
 
 @RestController
+@RequestMapping("/mbank")
 public class BankController {
 
     @Autowired

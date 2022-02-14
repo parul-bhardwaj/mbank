@@ -1,11 +1,12 @@
-package validator;
+package mbank.validator;
 
 
-import exception.ApplicationException;
+import mbank.exception.ApplicationException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
+@Component
 public class JwtRequestFilter extends OncePerRequestFilter {
 
 
@@ -30,7 +32,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
             final String requestTokenHeader = request.getHeader("Authorization");
 
-            String username = null;
             String jwtToken = null;
             // JWT Token is in the form "Bearer token". Remove Bearer word and get
             // only the Token

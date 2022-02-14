@@ -1,12 +1,14 @@
-package validator;
+package mbank.validator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 
 @Service
@@ -15,11 +17,12 @@ public class RoleParser {
     ObjectMapper objectMapper;
 
     @Value("classpath:file.json")
-    Resource resource;
+    private Resource resource;
 
     Role role;
 
-    public RoleParser() throws IOException {
+    @PostConstruct
+    public void init() throws IOException {
         role = objectMapper.readValue(resource.getInputStream(), Role.class);
     }
 

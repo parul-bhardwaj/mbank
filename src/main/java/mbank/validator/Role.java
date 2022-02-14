@@ -1,4 +1,4 @@
-package validator;
+package mbank.validator;
 
 import java.util.List;
 

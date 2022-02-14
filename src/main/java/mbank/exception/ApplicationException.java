@@ -1,4 +1,4 @@
-package exception;
+package mbank.exception;
 
 public class ApplicationException extends RuntimeException{
 

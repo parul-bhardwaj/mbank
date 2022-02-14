@@ -1,5 +1,5 @@
 {
-  "name": "Administrator"
+  "name": "Administrator",
   "childrenRoles": [
     {
       "name" : "UserManager",
