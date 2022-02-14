@@ -1,0 +1,32 @@
+{
+  "name": "Administrator"
+  "childrenRoles": [
+    {
+      "name" : "UserManager",
+      "childrenRoles": [
+        {
+          "name": "KYCApprover"
+        },
+        {
+          "name": "SupportManager"
+        }
+      ]
+    },
+    {
+      "name" : "WalletManager",
+      "childrenRoles": [
+        {
+          "name": "FraudMonitor"
+        },
+        {
+          "name": "AppUser",
+          "childrenRoles": [
+            {
+              "name": "WalletUser"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
