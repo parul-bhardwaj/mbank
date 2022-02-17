@@ -1,10 +1,7 @@
 package mbank.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import mbank.response.BankResponse;
 import mbank.validator.RoleParser;
 
@@ -16,7 +13,7 @@ public class BankController {
     RoleParser roleParser;
 
     @GetMapping("/fetch")
-    public BankResponse getData(@RequestParam String username, @RequestParam String roleName){
+    public BankResponse getData(@RequestAttribute String username, @RequestAttribute String roleName){
         BankResponse bankResponse = new BankResponse();
         bankResponse.setName(username);
         if(roleParser.isWalletUser(roleName))

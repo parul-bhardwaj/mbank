@@ -39,8 +39,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 jwtToken = StringUtils.substringAfter(requestTokenHeader, "Bearer ");
                 Claims allClaims = getAllClaimsFromToken(jwtToken);
                 if(validateToken(allClaims)){
-                     request.setAttribute("userName", allClaims.getSubject());
-                     request.setAttribute("role", allClaims.get("role"));
+                     request.setAttribute("username", allClaims.getSubject());
+                     request.setAttribute("roleName", allClaims.get("role"));
                 }
                 else {
                     throw new ApplicationException("Token is not valid");
